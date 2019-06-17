@@ -1,0 +1,10 @@
+postgres:
+  image: postgres:11.2-alpine
+  ports:
+    - "5432:5432"
+  volumes:
+    - ~/db/postgres:/var/lib/mysql
+    - ./config.cnf:/etc/mysql/conf.d/config.cnf
+  environment:
+    POSTGRES_PASSWORD: postgres
+  container_name: postgres
